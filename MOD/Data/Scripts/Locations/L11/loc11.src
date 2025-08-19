@@ -1,0 +1,23 @@
+#include "include\AIM.src"
+
+void proc OnEnterLocation(char item)
+{
+	//SetPelengPoint("B_L11_ARLINGLAB");
+	
+	if (!GetVar("AIM.NAU.CREATED"))
+	{
+		CreateGroup("TS_GRP_NAUTILUS");
+		SetMechGeneration("TS_GRP_NAUTILUS", 8);
+		SetVar("AIM.NAU.CREATED");
+		//SetPelengPoint("TS_GRP_NAUTILUS");
+
+		CreateGroup("DERCINT");
+		SetMechGeneration("DERCINT", 4);
+		SetRelation("DERCINT", "PLAYER", 10);
+	}
+}
+
+void proc OnHour(char locID)
+{
+	ThrowGoodsOnRoad("TOV_FUNGUS", 10);
+}

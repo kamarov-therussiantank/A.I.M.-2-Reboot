@@ -1,0 +1,29 @@
+#include "include\AIM.src"
+
+void proc OnEnterLocation(char item)
+{
+	StartScriptEvent("Events\EnterLocation.src", "OnEnterLocation", item);
+	
+	// The Sentinels relation towards other clans, and likewise
+	SetClanRelation("ORG_HIDDEN", "ORG_PLAYER", 100);
+	SetClanRelation("ORG_HIDDEN", "ORG_ARHEYS", -100);
+	SetClanRelation("ORG_HIDDEN", "ORG_FORWARD", -100);
+	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 100);
+	SetClanRelation("ORG_HIDDEN", "ORG_MORFS", -50);
+	
+	// The Arheys relation towards other clans, and likewise
+	SetClanRelation("ORG_ARHEYS", "ORG_FORWARD", -100);
+	SetClanRelation("ORG_ARHEYS", "ORG_FREE", -100);
+	SetClanRelation("ORG_ARHEYS", "ORG_PLAYER", -100);
+	SetClanRelation("ORG_ARHEYS", "ORG_MORFS", -100);
+
+	if (!GetVar("location3.FISRT"))
+	{
+		CreateGroup("TS_GRP_FATALL");
+		SetMechGeneration("TS_GRP_FATALL", 5);
+		SetClanLider("ORG_ARHEYS", "TS_GRP_FATALL");
+	
+		SetVar("location3.FISRT");
+	}
+}
+

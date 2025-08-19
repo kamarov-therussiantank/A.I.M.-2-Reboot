@@ -1,0 +1,22 @@
+#include "include\AIM.src"
+
+void proc OnEnterLocation(char item)
+{
+	StartScriptEvent("Events\EnterLocation.src", "OnEnterLocation", item);
+	StartScriptEvent("Events\Destructors.src", "OnEnterLocation", item);
+	
+	SetClanRelation("ORG_HIDDEN", "ORG_PLAYER", 100);
+
+	if (!GetVar("location2.FIRST"))
+	{
+		CreateGroup("TS_GRP_MORRANDO");
+		SetMechGeneration("TS_GRP_MORRANDO", 5);
+		SetClanLider("ORG_TOLERANS", "TS_GRP_MORRANDO");
+
+		CreateGroup("TS_GRP_VERCUS");
+		SetMechGeneration("TS_GRP_VERCUS", 5);
+		SetClanLider("ORG_NARGOON", "TS_GRP_VERCUS");
+		
+		SetVar("location2.FIRST");
+	}
+}

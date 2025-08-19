@@ -1,0 +1,64 @@
+#include "include\aim.cpp"
+
+void proc OnEnterLocation(char sLoc)
+{
+StartScriptEvent("Events\EnterLocation.src", "OnEnterLocation", sLoc);
+
+// Create Mindless Sentinels
+	
+	int iAmount;
+	int i = 0;
+	
+	iAmount= 1;
+	
+	switch (sLoc)
+	{
+	case "location_10":
+		{
+			iAmount = 5;
+		}
+	}
+	
+	while(i<iAmount)
+	{
+		char	sMech1;
+		char	sMech2;
+		char	sMech3;
+		char	sMech4;
+		char	sMech5;
+		char	sPoint;
+		  
+		sPoint = "ROAD"+char(i+1);
+		sMech1 = GetUniqueMechID();
+		sMech2 = GetUniqueMechID();
+		sMech3 = GetUniqueMechID();
+		sMech4 = GetUniqueMechID();
+		sMech5 = GetUniqueMechID();
+		
+		CreateMech(sMech1, sPoint, "CFG_DEFENDER01");
+		CreateMech(sMech2, sPoint, "CFG_DEFENDER01");
+		CreateMech(sMech3, sPoint, "CFG_DEFENDER02");
+		CreateMech(sMech4, sPoint, "CFG_DEFENDER03");
+		CreateMech(sMech5, sPoint, "CFG_DEFENDER04");
+			
+		SetMechGuard(sMech1, sPoint);
+		SetMechGuard(sMech2, sPoint);
+		SetMechGuard(sMech3, sPoint);
+		SetMechGuard(sMech4, sPoint);
+		SetMechGuard(sMech5, sPoint);
+		
+		SetMechClan(sMech1, "ORG_HIDDEN");
+		SetMechClan(sMech2, "ORG_HIDDEN");
+		SetMechClan(sMech3, "ORG_HIDDEN");
+		SetMechClan(sMech4, "ORG_HIDDEN");
+		SetMechClan(sMech5, "ORG_HIDDEN");
+		
+		SetRelation(sMech1, "PLAYER", 10);
+		SetRelation(sMech2, "PLAYER", 10);
+		SetRelation(sMech3, "PLAYER", 10);
+		SetRelation(sMech4, "PLAYER", 10);
+		SetRelation(sMech5, "PLAYER", 10);
+		
+		i = i+1;
+	}
+}

@@ -1,0 +1,40 @@
+#include "include\AIM.src"
+
+void proc OnEnterLocation(char item)
+{
+	StartScriptEvent("Events\EnterLocation.src", "OnEnterLocation", item);
+	
+	// The Sentinels relation towards other clans, and likewise
+	SetClanRelation("ORG_HIDDEN", "ORG_PLAYER", 100);
+	SetClanRelation("ORG_HIDDEN", "ORG_MORFS", -50);
+	SetClanRelation("ORG_HIDDEN", "ORG_SURVIVORS", 100);
+	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 100);
+	SetClanRelation("ORG_HIDDEN", "ORG_FIREHALF", -50);
+
+	if (!GetVar("location9.FISRT"))
+	{
+		CreateGroup("TS_GRP_TENEBR");
+		SetMechGeneration("TS_GRP_TENEBR", 5);
+		SetClanLider("ORG_SURVIVORS", "TS_GRP_TENEBR");
+		
+		SetVar("location9.FISRT");
+
+		CreateGroup("MIRAND");
+		SetMechGeneration("MIRAND", 4);
+		SetRelation("MIRAND", "PLAYER", 10);
+
+	}
+
+	if (GetVarChar("AIM.RECK.QUEST")=="T_L11_RECKONERS_01" &&
+		!GetVar("AIM.RECK01.SENSORS"))
+	{
+		SetSensor("L9_TANK1");
+		SetSensor("L9_TANK2");
+		SetSensor("L9_TANK3");
+		SetVar("AIM.RECK01.SENSORS");
+		
+		SetPelengPoint("L9_TANK1");
+		SetPelengPoint("L9_TANK2");
+		SetPelengPoint("L9_TANK3");
+	}
+}

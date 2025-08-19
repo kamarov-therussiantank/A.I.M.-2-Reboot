@@ -1,0 +1,62 @@
+#include "include\aim.cpp"
+
+void proc OnEnterLocation(char sLoc)
+{
+StartScriptEvent("Events\EnterLocation.src", "OnEnterLocation", sLoc);
+
+// Create Invaders
+	
+	int iAmount;
+	int i = 0;
+	
+	iAmount= 1;
+	
+	switch (sLoc)
+	{
+	case "location_9":
+		{
+			iAmount = 4;
+		}
+	case "location_6":
+		{
+			iAmount = 4;
+		}
+	case "location_5":
+		{
+			iAmount = 4;
+		}
+	}
+	
+	while(i<iAmount)
+	{
+		char	sMech1;
+		char	sMech2;
+		char	sMech3;
+		char	sMech4;
+		char	sPoint;
+		  
+		sPoint = "ROAD"+char(i+1);
+		sMech1 = GetUniqueMechID();
+		sMech2 = GetUniqueMechID();
+		sMech3 = GetUniqueMechID();
+		sMech4 = GetUniqueMechID();
+
+		CreateMech(sMech1, sPoint, "CFG_INVADER01");
+		CreateMech(sMech2, sPoint, "CFG_INVADER02");
+		CreateMech(sMech3, sPoint, "CFG_BIGINVADER01");
+		CreateMech(sMech4, sPoint, "CFG_BIGINVADER02");
+			
+		SetMechGuard(sMech1, sPoint);
+		SetMechGuard(sMech2, sPoint);
+		SetMechGuard(sMech3, sPoint);
+		SetMechGuard(sMech4, sPoint);
+		
+		SetRelation(sMech1, "PLAYER", -9);
+		SetRelation(sMech2, "PLAYER", -9);
+		SetRelation(sMech3, "PLAYER", -9);
+		SetRelation(sMech4, "PLAYER", -9);
+		
+		
+		i = i+1;
+	}
+}

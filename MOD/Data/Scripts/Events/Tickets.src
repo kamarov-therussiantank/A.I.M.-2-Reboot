@@ -1,0 +1,48 @@
+#include "include\AIM.cpp"
+
+void proc OnTickets(char cBuildingID)
+{
+	switch (GetArea())
+	{
+	case "location1":
+	{
+		Text("location2");
+	   // Text("location11");
+	}
+	case "location2":	
+	{
+		Text("location6");
+		Text("location9");
+		Text("location1");		
+	}
+	case "location3":
+	{
+		Text("location6");
+		Text("location10");
+	}  
+	case "location5":
+	{
+		Text("location6");
+		Text("location2");
+	}
+	case "location6":
+	{
+		Text("location5");
+		Text("location3");
+	}
+	case "location9":	
+	{
+		Text("location5");
+		Text("location2");
+	}	
+	case "location10":	
+	{
+		Text("location3");	
+		Text("location1");
+	}		
+	case "location11":	
+	{
+		Text("location1");
+	}		
+	}
+}

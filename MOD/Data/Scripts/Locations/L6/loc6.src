@@ -1,0 +1,28 @@
+#include "include\AIM.src"
+
+void proc OnEnterLocation(char item)
+{
+	StartScriptEvent("Events\EnterLocation.src", "OnEnterLocation", item);
+	StartScriptEvent("Events\Invaders.src", "OnEnterLocation", item);
+	
+	// The Sentinels relation towards other clans, and likewise
+	SetClanRelation("ORG_HIDDEN", "ORG_PLAYER", 100);
+	SetClanRelation("ORG_HIDDEN", "ORG_FINDERS", 100);
+	SetClanRelation("ORG_HIDDEN", "ORG_SURVIVORS", -50);
+	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 100);
+	SetClanRelation("ORG_HIDDEN", "ORG_CALKEEPERS", 100);
+
+	if (!GetVar("location6.FISRT"))
+	{
+		CreateGroup("TS_GRP_GAANTRO");
+		SetMechGeneration("TS_GRP_GAANTRO", 5);
+		SetClanLider("ORG_FINDERS", "TS_GRP_GAANTRO");
+	
+		SetVar("location6.FISRT");
+
+		CreateGroup("MOXXAART");
+		SetMechGeneration("MOXXAART", 4);
+		SetRelation("MOXXAART", "PLAYER", 10);
+		GliderGo("MOXXAART", "PLAYER");
+	}
+}

@@ -1,0 +1,21 @@
+#include "Include\AIM.src"
+
+// демо-лолкация
+
+// Обработка входа на локацию
+void proc OnEnterLocation(char locID)
+{
+	// Даем игроку 1000 денег
+	InstallEquipLayer(EQIP_CONFIG, "CFG_DEFENDER01");
+	AddAmount(AMOUNT_ENERGY, 10000000);
+	AddItem("AMM_BIG_ROCKET", 20);	
+	AddItem("AMM_ENERGY_ROCKET", 20);
+	AddItem("AMM_SHOCK_ROCKET", 20);
+	SetMechClan("ORG_FREE", "PLAYER");
+	SetClanLider("ORG_FREE", "PLAYER");
+		
+	// Запускаем стандартный обработчик
+	StartScriptEvent("Events\EnterLocation.src", "OnEnterLocation", locID);
+	
+	SetVar("DEMO");
+}
