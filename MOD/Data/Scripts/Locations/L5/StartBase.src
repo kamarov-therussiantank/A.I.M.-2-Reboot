@@ -60,7 +60,7 @@ void proc D_ALL_TEXT_1()
 	SetCaptureInterface(0); 
 	StartScriptEvent("Events\EnterBuild.src", "OnEnterBuild", GetVarChar("CurrentBuild"));
 	
-	AddAmount(AMOUNT_ENERGY, 50000000);
+	AddAmount(AMOUNT_ENERGY, 10000);
 	SetMsgJ ("TS_L5_J_Q_1");
 	SetMsgJ ("TS_L5_J_Q_2");
 	MarkMsgJ("TS_L5_J_Q_1", 1);
@@ -117,7 +117,7 @@ void proc Warrior()
 	ClearWindow();
 	Text("TS_L5_Q1_3.W");
 	Text("TS_L5_Q1_4");
-	SetVarChar("DEFAULT_CONFIG", "CFG_L12_M2_A_UNDER");
+	SetVarChar("DEFAULT_CONFIG", "CFG_START_WARRIOR");
 	
 	// AddAmount(AMOUNT_RATING_WAR, 200);
 }
