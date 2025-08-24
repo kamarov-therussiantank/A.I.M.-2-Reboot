@@ -1,2 +1,2 @@
-# A.I.M.-2-UEM
-A.I.M. Clan Wars - Ultimate Edition Mod
+# A.I.M. 2 Clan Wars Reboot
+A.I.M. 2 Clan Wars - Reboot Mod
