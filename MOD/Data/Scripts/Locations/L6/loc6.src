@@ -7,10 +7,10 @@ void proc OnEnterLocation(char item)
 	
 	// The Sentinels relation towards other clans, and likewise
 	SetClanRelation("ORG_HIDDEN", "ORG_PLAYER", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_FINDERS", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_SURVIVORS", -50);
-	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_CALKEEPERS", 100);
+	SetClanRelation("ORG_HIDDEN", "ORG_FINDERS", -100);
+	SetClanRelation("ORG_HIDDEN", "ORG_SURVIVORS", 0);
+	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 0);
+	SetClanRelation("ORG_HIDDEN", "ORG_CALMKEEPERS", 0);
 
 	if (!GetVar("location6.FISRT"))
 	{
@@ -23,6 +23,5 @@ void proc OnEnterLocation(char item)
 		CreateGroup("MOXXAART");
 		SetMechGeneration("MOXXAART", 4);
 		SetRelation("MOXXAART", "PLAYER", 10);
-		GliderGo("MOXXAART", "PLAYER");
 	}
 }

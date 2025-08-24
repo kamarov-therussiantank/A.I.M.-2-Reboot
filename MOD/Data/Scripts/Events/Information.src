@@ -28,7 +28,6 @@ void proc OnInformation(char cBuild)
 	Text("INFO_PEREHOD");
 	Text("INFO_POLYGON");
 	Text("INFO_R_CLANS");
-	Text("INFO_SENTINELS");
 	Text("INFO_R_SUPER");
 	Text("INFO_ROADS");
 	Text("INFO_SYMBIOT");

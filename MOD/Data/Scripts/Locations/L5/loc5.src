@@ -6,8 +6,8 @@ void proc OnEnterLocation(char item)
 	StartScriptEvent("Events\Invaders.src", "OnEnterLocation", item);
 	
 	SetClanRelation("ORG_HIDDEN", "ORG_PLAYER", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_MERCATORS", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_FANTOMS", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_FINDERS", -50);
+	SetClanRelation("ORG_HIDDEN", "ORG_MERCATORS", 0);
+	SetClanRelation("ORG_HIDDEN", "ORG_FANTOMS", 0);
+	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 0);
+	SetClanRelation("ORG_HIDDEN", "ORG_FINDERS", -100);
 }

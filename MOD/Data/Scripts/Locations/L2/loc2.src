@@ -3,7 +3,7 @@
 void proc OnEnterLocation(char item)
 {
 	StartScriptEvent("Events\EnterLocation.src", "OnEnterLocation", item);
-	StartScriptEvent("Events\Destructors.src", "OnEnterLocation", item);
+	StartScriptEvent("Events\Invaders.src", "OnEnterLocation", item);
 	
 	SetClanRelation("ORG_HIDDEN", "ORG_PLAYER", 100);
 

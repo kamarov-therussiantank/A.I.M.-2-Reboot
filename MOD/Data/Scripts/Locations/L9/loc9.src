@@ -6,10 +6,10 @@ void proc OnEnterLocation(char item)
 	
 	// The Sentinels relation towards other clans, and likewise
 	SetClanRelation("ORG_HIDDEN", "ORG_PLAYER", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_MORFS", -50);
-	SetClanRelation("ORG_HIDDEN", "ORG_SURVIVORS", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_FIREHALF", -50);
+	SetClanRelation("ORG_HIDDEN", "ORG_MORFS", 0);
+	SetClanRelation("ORG_HIDDEN", "ORG_SURVIVORS", 0);
+	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 0);
+	SetClanRelation("ORG_HIDDEN", "ORG_FIREHALF", 0);
 
 	if (!GetVar("location9.FISRT"))
 	{

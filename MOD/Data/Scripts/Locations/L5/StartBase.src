@@ -91,7 +91,7 @@ void proc D_ALL_TEXT_1()
 	SetPelengPoint("B_L5_SBUNKER");
 	SetPelengPoint("TS_L5_POINT1");	
 	SetPelengPoint("TS_GRP_ARIO");
-	SetClanLider("ORG_PLAYER", "PLAYER");
+	SetMechClan("PLAYER", "ORG_FREE");
    
 	InstallEquipLayer(EQIP_CONFIG, GetVarChar("DEFAULT_CONFIG"));	
 }//endproc
@@ -119,7 +119,7 @@ void proc Warrior()
 	Text("TS_L5_Q1_4");
 	SetVarChar("DEFAULT_CONFIG", "CFG_L12_M2_A_UNDER");
 	
-	AddAmount(AMOUNT_RATING_WAR, 200);
+	// AddAmount(AMOUNT_RATING_WAR, 200);
 }
 
 void proc Quester()
@@ -129,7 +129,7 @@ void proc Quester()
 	Text("TS_L5_Q1_4");
 	SetVarChar("DEFAULT_CONFIG", "CFG_START_COURIER");
 
-	AddAmount(AMOUNT_RATING_QUEST, 200);
+	// AddAmount(AMOUNT_RATING_QUEST, 200);
 }
 
 void proc Trader()
@@ -139,7 +139,7 @@ void proc Trader()
 	Text("TS_L5_Q1_4");
 	SetVarChar("DEFAULT_CONFIG", "CFG_START_TRADER");	
 	
-	AddAmount(AMOUNT_RATING_TRADE, 200);
+	// AddAmount(AMOUNT_RATING_TRADE, 200);
 }
 
 void proc Gotrainmap()

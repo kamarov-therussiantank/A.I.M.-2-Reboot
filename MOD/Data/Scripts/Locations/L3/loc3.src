@@ -7,9 +7,9 @@ void proc OnEnterLocation(char item)
 	// The Sentinels relation towards other clans, and likewise
 	SetClanRelation("ORG_HIDDEN", "ORG_PLAYER", 100);
 	SetClanRelation("ORG_HIDDEN", "ORG_ARHEYS", -100);
-	SetClanRelation("ORG_HIDDEN", "ORG_FORWARD", -100);
-	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 100);
-	SetClanRelation("ORG_HIDDEN", "ORG_MORFS", -50);
+	SetClanRelation("ORG_HIDDEN", "ORG_FORWARD", 0);
+	SetClanRelation("ORG_HIDDEN", "ORG_FREE", 0);
+	SetClanRelation("ORG_HIDDEN", "ORG_MORFS", 0);
 	
 	// The Arheys relation towards other clans, and likewise
 	SetClanRelation("ORG_ARHEYS", "ORG_FORWARD", -100);

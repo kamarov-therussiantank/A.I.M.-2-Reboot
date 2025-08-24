@@ -42,6 +42,30 @@ void proc OnEnterBuild(char item)
 					
 					if (GetVar("gen_q")!=0)
 						Text("GEN_DECLINE_TUNNEL");
+						
+					//Add Logic that will hand location keys based on the mechminds rating
+					if (GetRating(RATING_WAR)<3)
+					   {
+						Text("INT_TUNNEL_ACCESS_DENIDED");
+					   }
+					
+					if (GetRating(RATING_WAR)>=3)
+					   {
+						AddLocationKey("location2", 1);
+						AddLocationKey("location6", 1);
+					   }
+					   
+					if (GetRating(RATING_WAR)>=6)
+					   {
+						AddLocationKey("location3", 1);
+					   }
+					   
+					if (GetRating(RATING_WAR)>=9)
+					   {
+						AddLocationKey("location1", 1);
+						AddLocationKey("location10", 1);
+					   }
+
 				}
 			case 20:
 			{
@@ -73,6 +97,7 @@ void proc OnEnterBuild(char item)
 		
 	if (typebuild==3)
 	{
+	
 		if (GetHoldMech()>0)
 			Text("INT_TUNNEL_MINDS");
 		return;
@@ -112,14 +137,17 @@ void proc In()
 	char sOrg;
 	sOrg = GetBuildOwner(GetVarChar("CurrentBuild"));
 	SetMechClan("PLAYER", sOrg);
+	SetClanRelation("ORG_PLAYER", item, 100);
+	Text("S_LEAVECLAN");
 	SetTimer("Out", 12, sOrg);
 }
 
 void proc Out(char item)
 {
+	DeleteText("S_LEAVECLAN");
 	Text("S_CLAN_LEAVED");
 	SetMechClan("PLAYER", "ORG_PLAYER");
-	SetClanRelation("ORG_PLAYER", item, 0);
+	SetClanRelation("ORG_PLAYER", item, 3);
 } //end proc
 
 

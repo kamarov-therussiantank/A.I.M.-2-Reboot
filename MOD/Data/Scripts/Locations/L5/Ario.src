@@ -2,13 +2,15 @@
 
 void proc OnView(char glID)
 {	
-	if (GetMechClan("PLAYER")!="ORG_PLAYER")
+	if (GetMechClan("PLAYER")!="ORG_FREE")
 		return;
 		
 	if (!GetVar("AIM.ARIO.TS.1"))
 	{
 		MechSay("TS_GRP_ARIO", "TS_L5_Q3_0");
 		SetRelation("TS_GRP_ARIO", "PLAYER", 10);
+		SetMechClan("PLAYER", "ORG_PLAYER");
+		SetClanLider("ORG_PLAYER", "PLAYER");
 		AssignGliderToPlayer("TS_GRP_ARIO", 1);
 	}
 }
